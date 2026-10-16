@@ -9,8 +9,10 @@ from src.message_processor import MessageProcessor
 from src.validator import validate_message
 from src.scenario_lab import build_scenario, SCENARIO_DESCRIPTIONS
 from src.tamper_audit import TamperEvidentAudit
+from src.live_test import live_test
 
 app = Flask(__name__)
+app.register_blueprint(live_test)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 LOG_DIR = BASE_DIR / "logs"
@@ -139,6 +141,9 @@ DASHBOARD_PAGE = """
         </form>
         <a class="button secondary" href="{{ url_for('scenario_lab_page') }}">
             ◈ Threat Scenario Lab
+        </a>
+        <a class="button secondary" href="{{ url_for('live_test.live_test_page') }}">
+            LIVE MESSAGE TESTER
         </a>
         <a class="button secondary" href="{{ url_for('audit_integrity_page') }}">
             ✓ Verify Audit Integrity
