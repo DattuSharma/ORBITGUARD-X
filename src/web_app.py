@@ -194,7 +194,7 @@ SCENARIO_PAGE = """
 <h1>Threat Scenario Lab</h1>
 <p>Test synthetic messages against the validation rules.</p>
 <p class="notice">Simulation only. No operational systems are contacted.</p>
-<a class="button secondary" href="{{ url_for('index') }}">← Dashboard</a>
+<a class="button secondary" href="{{ url_for('index_route') }}">← Dashboard</a>
 </header>
 
 <section>
@@ -237,7 +237,7 @@ INTEGRITY_PAGE = """
 <header>
 <h1>Audit Integrity Verification</h1>
 <p>Verify the hash-linked synthetic audit records.</p>
-<a class="button secondary" href="{{ url_for('index') }}">← Dashboard</a>
+<a class="button secondary" href="{{ url_for('index_route') }}">← Dashboard</a>
 </header>
 <section>
 {% if error %}
